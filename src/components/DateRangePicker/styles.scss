@@ -1,0 +1,118 @@
+// components/DateRangePicker/styles.scss
+.date-range-picker {
+  width: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+
+  h2 {
+    margin: 0 0 16px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+}
+
+.calendar {
+  .month-year-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .nav-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 1.2rem;
+      color: #666;
+
+      &:hover {
+        color: #333;
+      }
+    }
+
+    .current-month-year {
+      font-weight: bold;
+      color: #333;
+    }
+  }
+
+  .calendar-grid {
+    .weekdays-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 8px;
+
+      .weekday {
+        text-align: center;
+        font-size: 0.8rem;
+        color: #666;
+      }
+    }
+
+    .dates-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+
+      .date-cell {
+        aspect-ratio: 1;
+        border: none;
+        background: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s;
+
+        &:hover:not(.disabled) {
+          background-color: #f0f0f0;
+        }
+
+        &.disabled {
+          color: #ccc;
+          cursor: not-allowed;
+        }
+
+        &.today {
+          font-weight: bold;
+          border: 1px solid #666;
+        }
+
+        &.selected {
+          background-color: #0066cc;
+          color: white;
+        }
+
+        &.in-range {
+          background-color: #e6f0ff;
+        }
+
+        &.range-start {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        &.range-end {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+.selected-range {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #666;
+
+  > div {
+    margin-bottom: 4px;
+  }
+}
