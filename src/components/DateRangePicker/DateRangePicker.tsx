@@ -1,4 +1,3 @@
-// components/DateRangePicker/DateRangePicker.tsx
 import React, { useState } from 'react';
 import Calendar from './Calendar';
 import { formatDate, getNextMonth, getPrevMonth } from '../../utils/dateUtils';
